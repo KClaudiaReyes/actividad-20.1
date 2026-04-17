@@ -3,7 +3,7 @@
 class Paciente
 {
     private string nombre;
-    private int dpi;
+    private long dpi;
     private int telefono;
     private int edad;
 
@@ -31,7 +31,7 @@ class Paciente
         }
     }
 
-    public int DPi
+    public long DPi
     {
         get { return dpi; }
         set
@@ -83,7 +83,7 @@ class Program
 {
     static void Main()
     {
-        string Nombre; int dpi; bool esDpi;
+        string Nombre; long dpi; bool esDpi;
         Console.WriteLine("REGISTRO DEL ESTUDIANTE");
        
 
@@ -101,14 +101,9 @@ class Program
         do
         {
             Console.WriteLine("dpi");
-               /// dpi = Convert.ToInt32(Console.ReadLine());
-            esDpi = int.TryParse(Console.ReadLine(), out dpi);
-            if( dpi <13)
-
-            {
-                Console.WriteLine("no puede ingresar menos de 13 digitos ");
-            }
-        } while ( dpi < 13);
+              dpi = long.Try(Console.ReadLine());
+           
+        } while (dpi.ToString().Length < 13);
 
         int numero;
         bool esnumero;
